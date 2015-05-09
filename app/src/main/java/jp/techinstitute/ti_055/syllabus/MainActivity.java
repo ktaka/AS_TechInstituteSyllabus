@@ -58,7 +58,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     private ProgressBar progressBar;
 
     private RequestQueue reqQueue;
-    private static final String syllabusUrl = "https://dl.dropboxusercontent.com/u/1088314/tech_institute/2014/syllabus.json";
+    private static final String syllabusUrl = "https://script.google.com/macros/s/AKfycbyibdC1ZESlWsIYRIL4XFLfx7qRVzruWMHI6YFJ4qlUam4-p-Q3/exec?room=tokyo";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
