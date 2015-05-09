@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -97,6 +98,11 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         };
 
         JsonObjectRequest jsonReq = new JsonObjectRequest(syllabusUrl, null, listener, errorListener);
+        DefaultRetryPolicy retryPolicy = new DefaultRetryPolicy(10000, // timeout 10000 [ms]
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+                );
+        jsonReq.setRetryPolicy(retryPolicy);
         reqQueue.add(jsonReq);
     }
 
